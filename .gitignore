@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+# данные и артефакты не храним в git
+data/
+*.pt
+*.pth
+*.onnx
+model.json

@@ -1,0 +1,37 @@
+[project]
+name = "ml-course"
+version = "0.1.0"
+description = "Курс ML-инженера по roadmap.sh: код уроков, задания и решения"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "pandas>=3.0",
+    "pyarrow>=17",
+    "openpyxl>=3.1",
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    "scikit-learn>=1.9",
+    "jupyterlab>=4.2",
+    "ipykernel>=6.29",
+    "pytest>=8.0",
+    "requests>=2.32",
+    "pillow>=11.0",
+    "scikit-image>=0.24",
+    "umap-learn>=0.5",
+    # GTX 1050 Ti (Pascal, sm_61): последняя ветка PyTorch со сборками под Pascal — 2.14 + CUDA 12.6
+    "torch==2.14.*",
+    "torchvision==0.29.*",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+
+[tool.pytest.ini_options]
+addopts = "-q"
